@@ -1,0 +1,41 @@
+<!DOCTYPE html> //permet d'indiquer au navigateur que le document est en HTML
+
+<html lang=" "fr"> //indique la langue principale du document
+
+
+
+<head>  //contient les méta-infos du document, cad des infos cachées pour le navigateur
+    <meta charset="UTF-8">  //indique l'encodage des caractères utilisés dans le document
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    //rend le site interactif en adaptant la mise en page à la taille de l'écran
+    <title>Mon Portfolio</title>            //titre de la page qui s'affiche dans l'onglet du navigateur
+    <link rel="stylesheet" href="styles.css">       //lien vers le fichier CSS pour le style
+</head>
+
+
+<body> //corps du document, cad le contenu visible de la page web
+    <header>
+        <h1>Bienvenue sur mon Portfolio</h1> //titre principal de la page
+        <nav>
+            <a href="#projets">Projets  </a> //lien vers la section projets
+            <a href="#contact">Contact</a> //lien vers la section Contacts
+        </nav>
+    </header>
+
+    <section id="projets"> //section pour les projets
+        <h2>Mes Projets</h2> //titre de la section projets; ajouter des projets dessous
+        <article>
+            <h3>Projet 1</h3> //titre du projet 1
+            <p>Description du projet 1.</p> //description du projet 1
+        </article>
+        <article>
+            <h3>Projet 2</h3> //titre du projet 2
+            <p>Description du projet 2.</p> //description du projet 2
+        </article>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Vous pouvez me contacter ici :</p>
+    </section>
+
+    
