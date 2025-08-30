@@ -181,6 +181,8 @@ h2::after {
   background: #fff;
   display: none;         /* caché par défaut */
   z-index: 1000;
+  transform: scale(0);
+  transition: transform 0.3s ease;
 }
 
 #chatbox {

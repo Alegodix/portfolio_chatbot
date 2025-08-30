@@ -6,16 +6,19 @@ const sendBtn = document.getElementById('sendBtn');
 const userInput = document.getElementById('userInput');
 const chatbox = document.getElementById('chatbox');
 
-// Ouvrir le chatbot
+// Ouvrir le chatbot avec animation
 chatToggle.addEventListener('click', () => {
-  chatbot.style.display = 'flex';
+  chatbot.classList.add('open');
   chatToggle.style.display = 'none';
 });
 
 // Fermer le chatbot
 chatClose.addEventListener('click', () => {
-  chatbot.style.display = 'none';
-  chatToggle.style.display = 'block';
+  chatbot.classList.remove('open');
+  setTimeout(() => {
+    chatbot.style.display = 'none'; // cache complètement après l'animation
+    chatToggle.style.display = 'block';
+  }, 300); // durée = durée de la transition
 });
 
 // Fonction pour envoyer un message
