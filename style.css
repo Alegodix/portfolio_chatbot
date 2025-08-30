@@ -1,34 +1,28 @@
-/* CSS styles */
-/* ====== POLICE ET BASE ====== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* ====== BASE ====== */
 body {
   font-family: 'Poppins', sans-serif;
   background: #f4f7fb;
   color: #333;
   line-height: 1.6;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 /* ====== HEADER ====== */
 header {
   background: linear-gradient(135deg, #004080, #0073e6);
   color: white;
-  padding: 30px 20px;
+  padding: 40px 20px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 header h1 {
-  margin-bottom: 10px;
-  font-size: 2.2rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
 }
 
 nav a {
@@ -36,100 +30,122 @@ nav a {
   margin: 0 15px;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
   color: #ffdd57;
+  border-bottom: 2px solid #ffdd57;
+  padding-bottom: 3px;
 }
 
 /* ====== SECTIONS ====== */
 main {
-  max-width: 1000px;
-  margin: 40px auto;
+  max-width: 1100px;
+  margin: 50px auto;
   padding: 0 20px;
 }
 
 section {
-  margin-bottom: 60px;
-  margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 30px;
   color: #004080;
-  text-align: center
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #0073e6;
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
 
 /* ====== PROJETS EN GRILLE ====== */
 .projets-grid {
   display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin: 20px;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .projet-card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    background: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-
-    display: flex;              /* on transforme en flexbox */
-    flex-direction: column;
-}
-
-.projet-card .btn {
-    margin-top: auto;          /* pousse le bouton vers le bas */ 
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .projet-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.projet-card h3 {
+  margin-bottom: 10px;
+  color: #0073e6;
+  font-size: 1.3rem;
 }
 
 .projet-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
-article {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+.projet-card p {
+  flex: 1;
+  margin-bottom: 15px;
 }
 
-article:hover {
-  transform: translateY(-5px);
+/* Bouton projet */
+.projet-card .btn {
+  margin-top: auto;
 }
 
-article h3 {
-  color: #0073e6;
-  margin-bottom: 10px;
-}
-
-/* ====== CONTACT ====== */
+/* ====== BOUTONS ====== */
 .btn {
   display: inline-block;
   background: #0073e6;
   color: white;
-  padding: 12px 20px;
+  padding: 12px 24px;
   border-radius: 8px;
   text-decoration: none;
-  transition: background 0.3s ease;
-  margin-top: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
   background: #005bb5;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+/* ====== CONTACT ====== */
+#contact {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: auto;
+}
+
+#contact p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
 }
 
 /* ====== CHATBOT ====== */
@@ -143,7 +159,7 @@ article h3 {
   flex-direction: column;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
   background: #fff;
 }
 
@@ -155,7 +171,6 @@ article h3 {
   border-bottom: 1px solid #eee;
 }
 
-/* Entrée utilisateur */
 .chat-input {
   display: flex;
 }
@@ -179,25 +194,4 @@ article h3 {
 
 .chat-input button:hover {
   background: #005bb5;
-}
-
-/* Messages style bulle */
-.message {
-  margin: 8px 0;
-  padding: 10px 14px;
-  border-radius: 16px;
-  max-width: 80%;
-  word-wrap: break-word;
-}
-
-.message.user {
-  background: #0073e6;
-  color: white;
-  margin-left: auto;
-}
-
-.message.bot {
-  background: #e5e5ea;
-  color: #333;
-  margin-right: auto;
 }
