@@ -1,4 +1,3 @@
-// Récupérer les éléments
 const chatToggle = document.getElementById('chat-toggle');
 const chatClose = document.getElementById('chat-close');
 const chatbot = document.getElementById('chatbot');
@@ -6,7 +5,7 @@ const sendBtn = document.getElementById('sendBtn');
 const userInput = document.getElementById('userInput');
 const chatbox = document.getElementById('chatbox');
 
-// Ouvrir le chatbot avec animation
+// Ouvrir le chatbot
 chatToggle.addEventListener('click', () => {
   chatbot.classList.add('open');
   chatToggle.style.display = 'none';
@@ -15,10 +14,7 @@ chatToggle.addEventListener('click', () => {
 // Fermer le chatbot
 chatClose.addEventListener('click', () => {
   chatbot.classList.remove('open');
-  setTimeout(() => {
-    chatbot.style.display = 'none'; // cache complètement après l'animation
-    chatToggle.style.display = 'block';
-  }, 300); // durée = durée de la transition
+  chatToggle.style.display = 'block';
 });
 
 // Fonction pour envoyer un message
@@ -40,14 +36,14 @@ function sendMessage() {
   botMsg.style.marginBottom = '10px';
   chatbox.appendChild(botMsg);
 
-  chatbox.scrollTop = chatbox.scrollHeight; // scroll en bas
+  chatbox.scrollTop = chatbox.scrollHeight;
   userInput.value = '';
 }
 
-// Écoute du clic sur Envoyer
+// Envoyer avec bouton
 sendBtn.addEventListener('click', sendMessage);
 
-// Écoute de la touche "Entrée"
+// Envoyer avec touche Entrée
 userInput.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') sendMessage();
 });

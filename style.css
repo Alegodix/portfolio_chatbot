@@ -183,6 +183,28 @@ h2::after {
   z-index: 1000;
   transform: scale(0);
   transition: transform 0.3s ease;
+  z-index: 1000;
+  pointer-events: none; /* bloquer les clics quand caché */
+}
+
+/* Animation d'ouverture */
+#chatbot.open {
+  display: flex;
+  transform: scale(1);
+}
+
+/* Bouton fermer */
+#chat-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 1010; /* toujours au-dessus du chatbox */
+  color: #0073e6;
+  font-weight: bold;
 }
 
 #chatbox {
