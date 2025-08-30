@@ -1,49 +1,95 @@
-const chatToggle = document.getElementById('chat-toggle');
-const chatClose = document.getElementById('chat-close');
-const chatbot = document.getElementById('chatbot');
-const sendBtn = document.getElementById('sendBtn');
-const userInput = document.getElementById('userInput');
-const chatbox = document.getElementById('chatbox');
+document.addEventListener('DOMContentLoaded', () => {
+  const chatToggle = document.getElementById('chat-toggle');
+  const chatClose  = document.getElementById('chat-close');
+  const chatbot    = document.getElementById('chatbot');
+  const chatbox    = document.getElementById('chatbox');
+  const chatForm   = document.getElementById('chat-form');
+  const userInput  = document.getElementById('userInput');
 
-// Ouvrir le chatbot
-chatToggle.addEventListener('click', () => {
-  chatbot.classList.add('open');
-  chatToggle.style.display = 'none';
-});
+  // Ouvrir / fermer
+  chatToggle.addEventListener('click', () => {
+    chatbot.classList.add('open');
+    chatToggle.style.display = 'none';
+    chatbot.setAttribute('aria-hidden', 'false');
+    setTimeout(() => userInput.focus(), 100);
+  });
 
-// Fermer le chatbot
-chatClose.addEventListener('click', () => {
-  chatbot.classList.remove('open');
-  chatToggle.style.display = 'block';
-});
+  chatClose.addEventListener('click', () => {
+    chatbot.classList.remove('open');
+    chatToggle.style.display = 'block';
+    chatbot.setAttribute('aria-hidden', 'true');
+  });
 
-// Fonction pour envoyer un message
-function sendMessage() {
-  const message = userInput.value.trim();
-  if (message === '') return;
+  // Mini "IA" par règles simples
+  function miniAI(message) {
+    const msg = message.toLowerCase();
 
-  // Message utilisateur
-  const userMsg = document.createElement('div');
-  userMsg.textContent = "Vous: " + message;
-  userMsg.style.textAlign = 'right';
-  userMsg.style.marginBottom = '10px';
-  chatbox.appendChild(userMsg);
+    const rules = [
+      { test: /^(bonjour|salut|bonsoir|hello)\b/i,
+        answer: "Salut 👋 ! Je suis le mini-assistant d’Alexandre. Pose-moi une question sur ses projets, son GitHub ou son contact." },
 
-  // Réponse automatique
-  const botMsg = document.createElement('div');
-  botMsg.textContent = "Bot: Merci pour votre message !";
-  botMsg.style.textAlign = 'left';
-  botMsg.style.marginBottom = '10px';
-  chatbox.appendChild(botMsg);
+      { test: /(mail|email|contacter|contact)/,
+        answer: "Tu peux écrire à <a href='mailto:alexandre_godineau@proton.me'>alexandre_godineau@proton.me</a>." },
 
-  chatbox.scrollTop = chatbox.scrollHeight;
-  userInput.value = '';
-}
+      { test: /\brunner\b/,
+        answer: "Runner : jeu Unity (C#) avec animations et vitesse progressive. Code : <a href='https://github.com/Alegodix/Runner' target='_blank' rel='noopener'>GitHub</a>." },
 
-// Envoyer avec bouton
-sendBtn.addEventListener('click', sendMessage);
+      { test: /(multiverseus|tour[- ]?par[- ]?tour|\bjeu\b.*\bc\b)/,
+        answer: "MultiverSeus : combat tour-par-tour en C pur (sans moteur), à 3. Repo : <a href='https://github.com/cardotbutzneo/projet_info' target='_blank' rel='noopener'>ici</a>." },
 
-// Envoyer avec touche Entrée
-userInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') sendMessage();
+      { test: /(portfolio|site|ce site)/,
+        answer: "Ce site est fait en HTML5/CSS. Tu veux des détails sur la stack ou le design ?" },
+
+      { test: /\bgithub\b/,
+        answer: "Le GitHub d’Alexandre : <a href='https://github.com/Alegodix' target='_blank' rel='noopener'>@Alegodix</a>." },
+
+      { test: /\bcv\b|curriculum/,
+        answer: "Alexandre peut envoyer son CV sur demande. Laisse un mail ou contacte-le directement par email." },
+    ];
+
+    for (const r of rules) {
+      if (r.test.test(msg)) return r.answer;
+    }
+    if (msg.length < 4) return "Peux-tu préciser ta question ?";
+    return "Merci pour ton message ! Tu peux me parler de Runner, MultiverSeus, du GitHub, du CV ou demander le contact.";
+  }
+
+  // Utilitaires
+  function escapeHTML(str) {
+    const p = document.createElement('p');
+    p.textContent = str;
+    return p.innerHTML;
+  }
+  function appendMessage(sender, html) {
+    const div = document.createElement('div');
+    div.className = `msg ${sender}`;
+    div.innerHTML = html;
+    chatbox.appendChild(div);
+    chatbox.scrollTop = chatbox.scrollHeight;
+  }
+
+  // Envoi : via le formulaire (Enter + bouton)
+  chatForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const message = userInput.value.trim();
+    if (!message) return;
+
+    appendMessage('user', escapeHTML(message));
+
+    // Indicateur de saisie
+    const typing = document.createElement('div');
+    typing.className = 'msg bot typing';
+    typing.textContent = '…';
+    chatbox.appendChild(typing);
+    chatbox.scrollTop = chatbox.scrollHeight;
+
+    setTimeout(() => {
+      typing.remove();
+      const reply = miniAI(message);
+      appendMessage('bot', reply);
+    }, 300);
+
+    userInput.value = '';
+    userInput.focus();
+  });
 });
