@@ -1,3 +1,4 @@
+/* CSS styles */
 /* ====== POLICE ET BASE ====== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
@@ -12,6 +13,7 @@ body {
   background: #f4f7fb;
   color: #333;
   line-height: 1.6;
+  text-align: center;
 }
 
 /* ====== HEADER ====== */
@@ -50,12 +52,14 @@ main {
 
 section {
   margin-bottom: 60px;
+  margin: 0 auto;
 }
 
 h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
   color: #004080;
+  text-align: center
 }
 
 /* ====== PROJETS EN GRILLE ====== */
@@ -85,6 +89,7 @@ h2 {
     height: 180px;
     object-fit: cover;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 article {
@@ -113,6 +118,7 @@ article h3 {
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.3s ease;
+  margin-top: 10px;
 }
 
 .btn:hover {
