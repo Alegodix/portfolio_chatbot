@@ -149,6 +149,24 @@ h2::after {
 }
 
 /* ====== CHATBOT ====== */
+
+#chat-toggle {
+  position: fixed;       /* bouton flottant en bas à droite */
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;    /* rond */
+  background: #0073e6;
+  color: white;
+  font-size: 28px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  display: none;         /* caché par défaut (desktop) */
+  z-index: 1000;         /* toujours au-dessus */
+}
+
 #chatbot {
   position: fixed;
   bottom: 20px;
@@ -161,6 +179,8 @@ h2::after {
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
   background: #fff;
+  display: none;         /* caché par défaut */
+  z-index: 1000;
 }
 
 #chatbox {
@@ -194,4 +214,15 @@ h2::after {
 
 .chat-input button:hover {
   background: #005bb5;
+}
+
+/* Affichage spécifique pour mobile */
+@media (max-width: 768px) {
+  #chat-toggle {
+    display: block;      /* bouton visible sur mobile */
+  }
+  #chatbot {
+    width: 90%;          /* chatbot plus large que 320px */
+    height: 60%;         /* hauteur adaptée */
+  }
 }
