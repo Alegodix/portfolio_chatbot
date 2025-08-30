@@ -163,7 +163,7 @@ h2::after {
   border: none;
   cursor: pointer;
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  display: none;         /* caché par défaut (desktop) */
+  display: block;
   z-index: 1000;         /* toujours au-dessus */
 }
 
@@ -216,13 +216,10 @@ h2::after {
   background: #005bb5;
 }
 
-/* Affichage spécifique pour mobile */
 @media (max-width: 1080px) {
-  #chat-toggle {
-    display: block;      /* bouton visible sur mobile */
-  }
+
   #chatbot {
-    width: 90%;          /* chatbot plus large que 320px */
-    height: 60%;         /* hauteur adaptée */
+    width: 90%;          
+    height: 60%;         
   }
 }
