@@ -217,7 +217,7 @@ h2::after {
 }
 
 /* Affichage spécifique pour mobile */
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   #chat-toggle {
     display: block;      /* bouton visible sur mobile */
   }
