@@ -1,16 +1,21 @@
 // Récupérer les éléments
 const chatToggle = document.getElementById('chat-toggle');
+const chatClose = document.getElementById('chat-close');
 const chatbot = document.getElementById('chatbot');
 const sendBtn = document.getElementById('sendBtn');
 const userInput = document.getElementById('userInput');
 const chatbox = document.getElementById('chatbox');
 
-// Fonction pour basculer l'affichage du chatbot
+// Ouvrir le chatbot
 chatToggle.addEventListener('click', () => {
-  if (chatbot.style.display === 'none' || chatbot.style.display === '') {
-    chatbot.style.display = 'flex'; // Affiche le chatbot
-    chatToggle.style.display = 'none'; // Cache le bouton
-  }
+  chatbot.style.display = 'flex';
+  chatToggle.style.display = 'none';
+});
+
+// Fermer le chatbot
+chatClose.addEventListener('click', () => {
+  chatbot.style.display = 'none';
+  chatToggle.style.display = 'block';
 });
 
 // Fonction pour envoyer un message
@@ -18,25 +23,25 @@ function sendMessage() {
   const message = userInput.value.trim();
   if (message === '') return;
 
-  // Ajouter le message utilisateur
+  // Message utilisateur
   const userMsg = document.createElement('div');
   userMsg.textContent = "Vous: " + message;
   userMsg.style.textAlign = 'right';
   userMsg.style.marginBottom = '10px';
   chatbox.appendChild(userMsg);
 
-  // Réponse automatique du chatbot
+  // Réponse automatique
   const botMsg = document.createElement('div');
   botMsg.textContent = "Bot: Merci pour votre message !";
   botMsg.style.textAlign = 'left';
   botMsg.style.marginBottom = '10px';
   chatbox.appendChild(botMsg);
 
-  chatbox.scrollTop = chatbox.scrollHeight; // Scroll en bas
+  chatbox.scrollTop = chatbox.scrollHeight; // scroll en bas
   userInput.value = '';
 }
 
-// Écoute du clic sur le bouton Envoyer
+// Écoute du clic sur Envoyer
 sendBtn.addEventListener('click', sendMessage);
 
 // Écoute de la touche "Entrée"
