@@ -11,81 +11,73 @@
 </head>
 <body>
 
-  <!-- Sommaire-->
-  <header>
-    <h1>Alexandre G.</h1>
-    <nav>
-      <a href="#projets">Projets</a>
-      <a href="#hobbys">Hobbys</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>Alexandre G.</h1>
+  <nav>
+    <a href="#projets">Projets</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <!-- Section projets-->
-  <main> 
-    <section id="projets">
-      <h2>Projets</h2>
-      <div class="projets-grid">
+<main>
+  <!-- Section Projets -->
+  <section id="projets">
+    <h2>Projets</h2>
+    <div class="projets-grid">
 
-        <!--Runner-->
-        <div class="projet-card">
-          <h3>Runner</h3>
-          <img src="Images/Runner_Screenshot.png" alt="Image du jeu Runner" />
-          <p>Jeu réalisé seul sur Unity en C#. Vitesse qui augmente, animations variées, arrière-plan dynamique.</p>
-          <a class="btn" href="https://github.com/Alegodix/Runner" target="_blank" rel="noopener">Voir sur GitHub</a>
+      <div class="projet-card">
+        <h3>Runner</h3>
+        <div class="project-image-wrapper">
+          <img src="Images/Runner_Screenshot.png" alt="Screenshot du jeu Runner" />
+          <div class="overlay">Voir le projet</div>
         </div>
-
-        <!--Portfolio-->
-        <div class="projet-card">
-          <h3>Ce site internet !</h3>
-
-          <a href="Projets/portfolioSite.html" class="projet-image-link">
-            <div class="project-image-wrapper">
-              <img src="Images/Portfolio_Screenshot.png" alt="Portfolio" />
-            </div>
-          </a>
-
-          <p>Site web réalisé en HTML5/CSS.</p>
-
-          <a class="btn" href="https://github.com/Alegodix/portfolio_chatbot" target="_blank" rel="noopener">Voir sur GitHub</a>
-        </div>
-
-        <!--MultiverSeus-->
-        <div class="projet-card">
-          <h3>MultiverSeus</h3>
-          <p>Jeu de combat tour-par-tour en C (sans moteur graphique), avec tutoriel et menu, réalisé à trois.</p>
-          <a class="btn" href="https://github.com/cardotbutzneo/projet_info" target="_blank" rel="noopener">Voir sur GitHub</a>
-        </div>
+        <p>Jeu réalisé seul sur Unity en C#. Vitesse qui augmente, animations variées, arrière-plan dynamique.</p>
+        <a class="btn" href="https://github.com/Alegodix/Runner" target="_blank" rel="noopener">Voir sur GitHub</a>
       </div>
-    </section>
 
-    <!-- Section contacts-->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Vous pouvez me contacter ici :</p>
-      <a class="btn" href="mailto:alexandre_godineau@proton.me">📩 Envoyer un mail</a>
-    </section>
-  </main>
+      <div class="projet-card">
+        <h3>Ce site internet !</h3>
+        <div class="project-image-wrapper">
+          <a href="Projets/portfolioSite.html" aria-label="Ouvrir le site du portfolio">
+            <img src="Images/Portfolio_Screenshot.png" alt="Screenshot du site Portfolio" />
+            <div class="overlay">Voir le projet</div>
+          </a>
+        </div>
+        <p>Site web réalisé en HTML5/CSS.</p>
+        <a class="btn" href="https://github.com/Alegodix/portfolio_chatbot" target="_blank" rel="noopener">Voir sur GitHub</a>
+      </div>
 
-  <!-- Bouton flottant pour ouvrir le chat -->
-  <button id="chat-toggle" aria-label="Ouvrir le chatbot" title="Chat">💬</button>
+      <div class="projet-card">
+        <h3>MultiverSeus</h3>
+        <p>Jeu de combat tour-par-tour en C (sans moteur graphique), avec tutoriel et menu, réalisé à trois.</p>
+        <a class="btn" href="https://github.com/cardotbutzneo/projet_info" target="_blank" rel="noopener">Voir sur GitHub</a>
+      </div>
 
-  <!-- Chatbot -->
-  <div id="chatbot" aria-hidden="true" role="dialog" aria-label="Chatbot">
-    <div class="chat-header">
-      <strong>Assistant</strong>
-      <button id="chat-close" aria-label="Fermer">×</button>
     </div>
+  </section>
 
-    <div id="chatbox" aria-live="polite"></div>
+  <!-- Section Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Vous pouvez me contacter ici :</p>
+    <a class="btn" href="mailto:alexandre_godineau@proton.me">📩 Envoyer un mail</a>
+  </section>
+</main>
 
-    <form id="chat-form" class="chat-input" autocomplete="off">
-      <input type="text" id="userInput" placeholder="Tapez votre message..." />
-      <button type="submit" id="sendBtn">Envoyer</button>
-    </form>
+<!-- Chatbot -->
+<button id="chat-toggle" aria-label="Ouvrir le chatbot" title="Chat">💬</button>
+<div id="chatbot" aria-hidden="true" role="dialog" aria-label="Chatbot">
+  <div class="chat-header">
+    <strong>Assistant</strong>
+    <button id="chat-close" aria-label="Fermer">×</button>
   </div>
+  <div id="chatbox" aria-live="polite"></div>
+  <form id="chat-form" class="chat-input" autocomplete="off">
+    <input type="text" id="userInput" placeholder="Tapez votre message..." />
+    <button type="submit" id="sendBtn">Envoyer</button>
+  </form>
+</div>
 
-  <script src="script.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>
-
