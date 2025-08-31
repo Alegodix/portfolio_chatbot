@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const rules = [
       { test: /^(bonjour|salut|bonsoir|hello)\b/i,
-        answer: "Salut 👋 ! Je suis le mini-assistant d’Alexandre. Pose-moi une question sur ses projets, son GitHub ou son contact." },
+        answer: "Bonjour 👋 ! Je suis le mini-assistant d’Alexandre. Posez-moi une mini-question sur ses projets, son GitHub ou son contact." },
 
       { test: /(mail|email|contacter|contact)/,
-        answer: "Tu peux écrire à <a href='mailto:alexandre_godineau@proton.me'>alexandre_godineau@proton.me</a>." },
+        answer: "Voulez-vous écrire à <a href='mailto:alexandre_godineau@proton.me'>alexandre_godineau@proton.me</a>." },
 
       { test: /\brunner\b/,
         answer: "Runner : jeu Unity (C#) avec animations et vitesse progressive. Code : <a href='https://github.com/Alegodix/Runner' target='_blank' rel='noopener'>GitHub</a>." },
@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
         answer: "MultiverSeus : combat tour-par-tour en C pur (sans moteur), à 3. Repo : <a href='https://github.com/cardotbutzneo/projet_info' target='_blank' rel='noopener'>ici</a>." },
 
       { test: /(portfolio|site|ce site)/,
-        answer: "Ce site est fait en HTML5/CSS. Tu veux des détails sur la stack ou le design ?" },
+        answer: "Ce site est fait en HTML5/CSS. Voulez-vous des détails sur la stack ou le design ?" },
 
       { test: /\bgithub\b/,
         answer: "Le GitHub d’Alexandre : <a href='https://github.com/Alegodix' target='_blank' rel='noopener'>@Alegodix</a>." },
 
       { test: /\bcv\b|curriculum/,
-        answer: "Alexandre peut envoyer son CV sur demande. Laisse un mail ou contacte-le directement par email." },
+        answer: "Alexandre peut envoyer son CV sur demande. Laisse un mail ou contactez-le directement par email." },
     ];
 
     for (const r of rules) {
