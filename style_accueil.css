@@ -15,17 +15,19 @@ body {
 
 /* ====== HEADER ====== */
 header {
-  background: linear-gradient(135deg, #004080, #0073e6);
-  color: #fff;
-  padding: 40px 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #004080, #0073e6);
+    color: #fff;
+    padding: 40px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-header h1 { font-size: 2.5rem; font-weight: 700; margin: 0 0 15px; letter-spacing: 2px; }
-nav a {
-  color: #fff; margin: 0 15px; text-decoration: none; font-weight: 500; transition: all .3s;
-}
-nav a:hover { color: #ffdd57; padding-bottom: 3px; font-weight: bolder; }
 
+header h1 { font-size: 2.5rem; font-weight: 700; margin: 0 0 15px; letter-spacing: 2px; }
+
+nav a {
+    color: #fff; margin: 0 15px; text-decoration: none; font-weight: 500; transition: all .3s;
+  }
+nav a:hover { color: #ffdd57; padding-bottom: 3px; font-weight: bolder; }
+  
 
 
 
@@ -42,48 +44,47 @@ h2::after { content: ""; display: block; width: 60px; height: 4px; background: #
 
 
 /* ====== PROJETS ====== */
-.projets-grid {
-  display: grid; gap: 25px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-.projet-card {
-  border: 1px solid #eee; border-radius: 14px; padding: 20px; background: #fff;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08); transition: transform .3s, box-shadow .3s;
-  display: flex; flex-direction: column;
-}
-.projet-card:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
-.projet-card h3 { margin: 0 0 10px; color: #0073e6; font-size: 1.3rem; }
-.projet-card img {
-  width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;
-}
 
-.projet-card p { flex: 1; margin-bottom: 15px; }
-
-.project-image-link {
-  text-decoration: none; 
-  display: block;
-  position: relative;
-}
-
-.project-image-wrapper {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.project-image-wrapper img {
-  width: 100%;
-  display: block;
-  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Ombre + assombrissement au hover */
-.project-image-wrapper:hover img {
-  transform: scale(1.05);
-  filter: brightness(70%);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-  transform: translateY(-2px);
-}
-
+  .projets-grid {
+    display: grid; gap: 25px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .projet-card {
+    border: 1px solid #eee; border-radius: 14px; padding: 20px; background: #fff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08); transition: transform .3s, box-shadow .3s;
+    display: flex; flex-direction: column;
+  }
+  .projet-card:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+  .projet-card h3 { margin: 0 0 10px; color: #0073e6; font-size: 1.3rem; }
+  .projet-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;}
+  
+  .projet-card p { flex: 1; margin-bottom: 15px; }
+  
+  .project-image-link {
+    text-decoration: none; 
+    display: block;
+    position: relative;
+  }
+  
+  .project-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .project-image-wrapper img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Ombre + assombrissement au hover */
+  .project-image-wrapper:hover img {
+    transform: scale(1.05);
+    filter: brightness(70%);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transform: translateY(-2px);
+  }
+  
 /* Overlay texte */
 .project-image-wrapper .overlay {
   position: absolute;
@@ -124,6 +125,7 @@ h2::after { content: ""; display: block; width: 60px; height: 4px; background: #
 
 
 /* ====== CHATBOT ====== */
+
 #chat-toggle {
   position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; border-radius: 50%;
   background: #0073e6; color: #fff; font-size: 28px; border: none; cursor: pointer;
@@ -151,10 +153,15 @@ h2::after { content: ""; display: block; width: 60px; height: 4px; background: #
   flex: 1; padding: 12px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 8px;
 }
 
-/* Messages */
-.msg { max-width: 80%; padding: 10px 12px; border-radius: 14px; font-size: 14px; text-align: left; }
+
+.msg { 
+  max-width: 80%; padding: 10px 12px; border-radius: 14px; font-size: 14px; text-align: left; 
+}
+
 .msg.user { align-self: flex-end; background: #0073e6; color: #fff; border-bottom-right-radius: 6px; }
+
 .msg.bot  { align-self: flex-start; background: #eef4ff; color: #102a43; border-bottom-left-radius: 6px; }
+
 .msg.typing { font-style: italic; opacity: .8; }
 
 .chat-input { display: flex; border-top: 1px solid #eee; }
@@ -170,7 +177,9 @@ h2::after { content: ""; display: block; width: 60px; height: 4px; background: #
   #chatbot { width: 90%; height: 60%; right: 5%; }
 }
 
-/* dark mode */
+
+/* ====== DARKMODE ====== */
+
 @media (prefers-color-scheme: dark) {
   body {
     background: #121212;
