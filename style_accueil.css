@@ -103,7 +103,7 @@ h2::after { content: ""; display: block; width: 60px; height: 4px; background: #
 
 /* ====== BOUTONS ====== */
 .btn {
-  display: inline-block; background: #0073e6; color: #fff; padding: 12px 24px; border-radius: 8px;
+  display: inline-block; background: #0063c7; color: #fff; padding: 12px 24px; border-radius: 8px;
   text-decoration: none; font-weight: 500; transition: all .3s;
 }
 .btn:hover { background: #005bb5; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transform: translateY(-2px); }
@@ -124,8 +124,10 @@ h2::after { content: ""; display: block; width: 60px; height: 4px; background: #
 #chat-toggle {
   position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; border-radius: 50%;
   background: #0073e6; color: #fff; font-size: 28px; border: none; cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2); z-index: 1000;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2); z-index: 1000; transition: all .3s
 }
+
+#chat-toggle:hover { background: #005bb5; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
 
 #chatbot {
   position: fixed; bottom: 20px; right: 20px; width: 320px; height: 420px; display: flex; flex-direction: column;
