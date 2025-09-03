@@ -24,7 +24,7 @@ header h1 { font-size: 2.5rem; font-weight: 700; margin: 0 0 15px; letter-spacin
 nav a {
     color: #fff; margin: 0 15px; text-decoration: none; font-weight: 500; transition: all .3s;
   }
-nav a:hover { color: #ffdd57; padding-bottom: 3px; font-weight: bolder; }
+nav a:hover { color: #ffd700; padding-bottom: 3px; font-weight: bolder; border-bottom: 2px solid #ffd700; }
   
 
 /* ====== SECTIONS ====== */
@@ -42,7 +42,7 @@ h2::after { content: ""; display: block; width: 60px; height: 4px; background: #
     display: grid; gap: 25px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
   .projet-card {
-    border: 1px solid #eee; border-radius: 14px; padding: 20px; background: #fff;
+    border: 1px solid #f0efef; border-radius: 14px; padding: 20px; background: #cacaca;
     box-shadow: 0 6px 15px rgba(0,0,0,0.08); transition: transform .3s, box-shadow .3s;
     display: flex; flex-direction: column;
   }
@@ -100,6 +100,20 @@ h2::after { content: ""; display: block; width: 60px; height: 4px; background: #
   opacity: 1;
 }
 
+/* ====== SOUS-SITE PROJET ====== */
+
+.project-subsite img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease; /* animation douce */
+      margin-bottom: 10px;
+      border-radius: 5%;
+      margin: 5px auto;
+    }
+
+    .project-subsite img:hover {
+      transform: translateY(-8px); /* agrandit l’image (120%) */
+    }
 
 /* ====== BOUTONS ====== */
 .btn {
@@ -111,7 +125,7 @@ h2::after { content: ""; display: block; width: 60px; height: 4px; background: #
 
 /* ====== CONTACT ====== */
 #contact {
-  background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  background: #cacaca; padding: 40px; border-radius: 16px; box-shadow: 0 6px 15px rgba(0,0,0,0.1);
   max-width: 600px; margin: auto;
 }
 #contact p { margin-bottom: 15px; font-size: 1.1rem; }
@@ -185,7 +199,7 @@ h2::after { content: ""; display: block; width: 60px; height: 4px; background: #
 
   /*header { background: linear-gradient(135deg, #1e1e2f, #2d2d44); }*/
 
-  h2 { color: #ffdd57; }
+  h2 { color: #ffec83; }
 
   nav a { color: #ddd;}
 
@@ -198,6 +212,8 @@ h2::after { content: ""; display: block; width: 60px; height: 4px; background: #
   }
 
   .projet-card h3 { color: #f4f7fb; }
+
+  .btn { color: #0073e6,}
 
   #chatbot {
     background: #1c1c1c;
